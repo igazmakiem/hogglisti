@@ -25,6 +25,7 @@ export const useApi = (endpoint: string, params?: string) => {
       .catch(function (error) {
         setError(error);
       });
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [endpoint, params]);
 
