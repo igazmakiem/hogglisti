@@ -3,7 +3,7 @@ import axios, { AxiosRequestConfig } from "axios";
 
 export const useApi = (endpoint: string, params?: string) => {
   const [data, setData] = useState<[]>([]);
-  const [error, setError] = useState([]);
+  const [error, setError] = useState<[]>([]);
   const url = `https://${process.env.REACT_APP_HOST}/`;
 
   useEffect(() => {

@@ -1,15 +1,16 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { SongsList, Song } from "views";
 import "./App.css";
-import { useApi } from "hooks";
-const App = () => {
-  const { data } = useApi("search", "a");
 
+const App = () => {
   return (
-    <div className="App">
-      {data.map((item: any) => (
-        <li>{item?.artist?.name}</li>
-      ))}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SongsList />} />
+        <Route path="/:songId" element={<Song />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
