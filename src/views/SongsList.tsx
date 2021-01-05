@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useApi } from "hooks";
+import { useApi } from "helpers/hooks";
 
 export const SongsList = () => {
-  const { data } = useApi("search", "*");
+  const { songList } = useApi({ params: "*" });
+
   return (
     <div>
-      {data.map((item: any) => (
+      {songList.map((item: any) => (
         <Link to={`${item?.id}`}>
           <li>{item?.artist?.name}</li>
         </Link>
